@@ -1,9 +1,11 @@
 import faker from "faker";
+import { Mappable } from "../services/map/Map";
 
-export class Company {
+export class Company implements Mappable {
   companyName: string;
   catchPhrase: string;
   location: google.maps.LatLngLiteral;
+  color: string;
 
   constructor() {
     this.companyName = faker.company.companyName();
@@ -12,6 +14,7 @@ export class Company {
       lng: parseFloat(faker.address.longitude()),
       lat: parseFloat(faker.address.latitude()),
     };
+    this.color = faker.commerce.color();
   }
 
   markerContent() {

@@ -1,6 +1,7 @@
-interface Mappable {
+export interface Mappable {
   location: google.maps.LatLngLiteral;
   markerContent(): string;
+  color: string;
 }
 
 export class Map {
