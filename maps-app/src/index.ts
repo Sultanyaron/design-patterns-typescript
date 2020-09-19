@@ -7,6 +7,6 @@ const company = new Company();
 
 const map = new Map("map");
 
-map.addUserMaker(user);
+map.addMarker(user);
 
-map.addCompanyMarker(company);
+map.addMarker(company);

@@ -3,10 +3,7 @@ import faker from "faker";
 export class Company {
   companyName: string;
   catchPhrase: string;
-  location: {
-    lat: number;
-    lng: number;
-  };
+  location: google.maps.LatLngLiteral;
 
   constructor() {
     this.companyName = faker.company.companyName();
@@ -15,5 +12,14 @@ export class Company {
       lng: parseFloat(faker.address.longitude()),
       lat: parseFloat(faker.address.latitude()),
     };
+  }
+
+  markerContent() {
+    return `
+    <div>
+      <h1>Company Name: ${this.companyName}</h1> 
+      <h3>${this.catchPhrase}</h3>
+    </div>
+    `;
   }
 }
